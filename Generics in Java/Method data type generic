@@ -1,0 +1,24 @@
+public class Utils {
+    public static <E> E first(E[] array) {
+//<E> generic type decliar
+//E return type of method
+//(E) perametar type of method
+        if (array == null || array.length == 0) {
+            return null;
+        }
+        return array[0];
+    }
+}
+
+public class Main {
+    public static void main(String[] args) {
+        String[] names = {"Alice", "Bob", "Charlie"};
+        Integer[] nums  = {10, 20, 30};
+
+        String firstName = Utils.first(names);
+        Integer firstNum = Utils.first(nums);
+
+        System.out.println(firstName);
+        System.out.println(firstNum);
+    }
+}
