@@ -1,0 +1,31 @@
+public class Finder {
+    public static <T extends Comparable<T>> T findMax(T[] array) {
+// T extends Comparable<T> ata dara bujaici j amra T type ar jinis gula ake opor ar sathe tulona kora jabe mane ata use na korle user j kono input dea compile time error asto
+        if (array == null || array.length == 0) {
+            return null;
+        }
+
+        T max = array[0];
+
+        for (int i = 1; i < array.length; i++) {
+            if (array[i].compareTo(max) > 0) {
+                max = array[i];
+            }
+        }
+
+        return max;
+    }
+}
+
+public class Main {
+    public static void main(String[] args) {
+        Integer[] numbers = {10, 50, 30, 70, 40};
+        String[] names = {"Rafi", "Tuhin", "Arif", "Nadia"};
+
+        Integer maxNumber = Finder.findMax(numbers);
+        System.out.println("Max number: " + maxNumber);
+
+        String maxName = Finder.findMax(names);
+        System.out.println("Max name (alphabetically): " + maxName);
+    }
+}
