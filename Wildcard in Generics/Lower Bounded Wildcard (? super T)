@@ -1,0 +1,18 @@
+import java.util.List;
+
+public class WildcardExample {
+
+    public static void addNumbers(List<? super Integer> list) {
+        list.add(10);  // We can add Integer or its subclass (but not a superclass)
+        list.add(20);
+    }
+
+    public static void main(String[] args) {
+        List<Number> numList = List.of(1, 2, 3);
+        List<Object> objList = List.of("Hello", "World");
+
+        // Accepts lists of Number or its superclasses (like Object)
+        addNumbers(numList);
+        addNumbers(objList);
+    }
+}
