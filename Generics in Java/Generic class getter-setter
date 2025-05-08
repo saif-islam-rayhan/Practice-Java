@@ -1,0 +1,27 @@
+public class ValueHolder<T> {
+    private T value;
+
+    public void setValue(T value) {
+        this.value = value;
+    }
+
+    public T getValue() {
+        return value;
+    }
+}
+
+public class Main {
+    public static void main(String[] args) {
+        ValueHolder<String> nameHolder = new ValueHolder<>();
+        nameHolder.setValue("Alice");
+        System.out.println("Name: " + nameHolder.getValue());
+
+        ValueHolder<Integer> ageHolder = new ValueHolder<>();
+        ageHolder.setValue(25);
+        System.out.println("Age: " + ageHolder.getValue());
+
+        ValueHolder<Boolean> boolHolder = new ValueHolder<>();
+        boolHolder.setValue(true);
+        System.out.println("Is true: " + boolHolder.getValue());
+    }
+}
