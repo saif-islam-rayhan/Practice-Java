@@ -1,0 +1,52 @@
+// Calculator class where T type must be a subclass of Number
+public class Calculator<T extends Number> {
+
+    // Method to add two numbers
+    public double add(T num1, T num2) {
+        return num1.doubleValue() + num2.doubleValue();
+    }
+
+    // Method to subtract two numbers
+    public double subtract(T num1, T num2) {
+        return num1.doubleValue() - num2.doubleValue();
+    }
+
+    // Method to multiply two numbers
+    public double multiply(T num1, T num2) {
+        return num1.doubleValue() * num2.doubleValue();
+    }
+
+    // Method to divide two numbers
+    public double divide(T num1, T num2) {
+        return num1.doubleValue() / num2.doubleValue();
+    }
+
+    // Method to print the result
+    public void printResult(double result) {
+        System.out.println("Result: " + result);
+    }
+}
+
+// Main class where the Calculator is used
+public class Main {
+    public static void main(String[] args) {
+        // Using Integer type
+        Calculator<Integer> intCalc = new Calculator<>();
+        double intAddResult = intCalc.add(10, 20);
+        intCalc.printResult(intAddResult); // Result: 30.0
+
+        // Using Double type
+        Calculator<Double> doubleCalc = new Calculator<>();
+        double doubleSubtractResult = doubleCalc.subtract(15.5, 5.3);
+        doubleCalc.printResult(doubleSubtractResult); // Result: 10.2
+
+        // Using Float type
+        Calculator<Float> floatCalc = new Calculator<>();
+        double floatMultiplyResult = floatCalc.multiply(5.5f, 4.2f);
+        floatCalc.printResult(floatMultiplyResult); // Result: 23.1
+
+        // Invalid: Trying to use String, which does not extend Number
+        // Calculator<String> stringCalc = new Calculator<>(); // ❌ Invalid – String is not a subclass of Number
+        // stringCalc.add("Hello", "World"); // ❌ This will not compile
+    }
+}
