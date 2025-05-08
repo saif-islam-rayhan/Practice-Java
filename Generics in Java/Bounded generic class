@@ -1,0 +1,41 @@
+// Base class
+class Animal {
+    void sound() {
+        System.out.println("Animal sound");
+    }
+}
+
+// Subclass
+class Dog extends Animal {
+    void bark() {
+        System.out.println("Dog barks");
+    }
+}
+
+// Sub-subclass
+class Puppy extends Dog {
+    void weep() {
+        System.out.println("Puppy weeps");
+    }
+}
+
+// Generic class – only Dog or Dog- subclass taken
+class Cage<T extends Dog> {
+    private T pet;
+
+    public Cage(T pet) {
+        this.pet = pet;
+    }
+
+    public void showType() {
+        System.out.println("Type: " + pet.getClass().getSimpleName());
+    }
+}
+
+public class Main {
+    public static void main(String[] args) {
+        Cage<Dog> c1 = new Cage<>(new Dog());        // ✅ valid
+        Cage<Puppy> c2 = new Cage<>(new Puppy());    // ✅ valid
+        // Cage<Animal> c3 = new Cage<>(new Animal()); // ❌ invalid – Animal is parent of Dog
+    }
+}
