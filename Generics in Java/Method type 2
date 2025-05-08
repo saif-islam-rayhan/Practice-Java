@@ -1,0 +1,20 @@
+public class Printer {
+    public static <T, U> void printBoth(T first, U second) {
+        System.out.println("First value: " + first);
+        System.out.println("Second value: " + second);
+    }
+}
+
+public class Main {
+    public static void main(String[] args) {
+        String name = "Alice";
+        Integer age = 25;
+
+        Printer.printBoth(name, age);
+
+        Double pi = 3.1416;
+        Boolean isTrue = true;
+
+        Printer.printBoth(pi, isTrue);
+    }
+}
