@@ -1,0 +1,16 @@
+public class Util {
+
+    public static <T extends Comparable<T>> T max(T a, T b) {
+        // ২. a.compareTo(b) >= 0 ? a : b
+        //    compareTo() return
+        //      Negative value → a < b
+        //      ০ → a == b
+        //      posative value → a > b
+        return (a.compareTo(b) >= 0) ? a : b;
+    }
+
+    public static void main(String[] args) {
+        System.out.println(max(10, 20));          
+        System.out.println(max("apple", "pear"));
+    }
+}
