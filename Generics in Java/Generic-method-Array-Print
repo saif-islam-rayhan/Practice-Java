@@ -1,0 +1,13 @@
+package Generic.method;
+
+public class Utill {
+    public static <T> void printArray(T[] Array){
+        for(T element :Array){
+            System.out.println(element+" ");
+        }
+    }
+    public static void main(String[] args){
+   Integer[] ints={2,4,5,6,7};
+   Utill.printArray(ints);
+    }
+}
