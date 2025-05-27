@@ -1,0 +1,31 @@
+package Generic.method;
+
+import java.util.Objects;
+
+public class Utill {
+    public static <T> int indexOf(T[] array, T element) {
+        for (int i = 0; i < array.length; i++) {
+            if (Objects.equals(array[i], element)) {
+                return i;
+            }
+        }
+        return -1;
+    }
+
+    public static <T> T elementAt(T[] array, int index) {
+        if (index < 0 || index >= array.length) {
+            throw new IndexOutOfBoundsException("Invalid index: " + index);
+        }
+        return array[index];
+    }
+
+    public static void main(String[] args) {
+        Integer[] ints = {5, 3, 8, 1, 2};
+        System.out.println(indexOf(ints, 8));
+        System.out.println(elementAt(ints, 3));
+
+        String[] fruits = {"apple", "pear", "orange", "banana"};
+        System.out.println(indexOf(fruits, "pear"));
+        System.out.println(elementAt(fruits, 2));
+    }
+}
