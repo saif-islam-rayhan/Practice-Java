@@ -1,0 +1,19 @@
+package Generic.method;
+
+public class Utill {
+   public static <U> void swap(U[] array,int i,int j){
+       U temp=array[i];
+       array[i]=array[j];
+       array[j]=temp;
+   }
+   public static void main(String[] args){
+       String[] arr={"x","Y","Z"};
+       swap(arr,0,2);
+       print(arr);
+   }
+   public static <U> void print(U[] array){
+       for(U e:array){
+           System.out.println(e);
+       }
+   }
+}
