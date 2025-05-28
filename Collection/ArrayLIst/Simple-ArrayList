@@ -1,0 +1,24 @@
+package bd.edu.collection;
+
+import java.util.ArrayList;
+
+public class Collection {
+    public static void main(String[] args){
+        ArrayList<Integer>numbers = new ArrayList<>();
+        numbers.add(22);
+        numbers.add(33);
+        for(int i=0;i<7;i++){
+            numbers.add(i);
+        }
+
+        System.out.println(numbers);
+        numbers.remove(0);
+        for(int it:numbers){
+            System.out.println(it);
+
+            
+        }
+
+
+    }
+}
