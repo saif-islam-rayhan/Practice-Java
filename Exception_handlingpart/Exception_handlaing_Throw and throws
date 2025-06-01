@@ -1,0 +1,28 @@
+class TooSmallNumberException extends Exception {
+    public TooSmallNumberException(String message) {
+        super(message);
+    }
+}
+
+public class ThrowThrowsSimple {
+    public static void checkNumber(int x) throws TooSmallNumberException {
+        if (x < 10) {
+            throw new TooSmallNumberException("ত্রুটি: " + x + " টি সংখ্যা 10 এর চেয়ে ছোট।");
+        }
+        System.out.println("সংখ্যা গ্রহণযোগ্য: " + x);
+    }
+
+    public static void main(String[] args) {
+        try {
+            checkNumber(5);
+        } catch (TooSmallNumberException e) {
+            System.out.println("Exception ধরলাম: " + e.getMessage());
+        }
+
+        try {
+            checkNumber(15);
+        } catch (TooSmallNumberException e) {
+            System.out.println("Exception ধরলাম: " + e.getMessage());
+        }
+    }
+}
