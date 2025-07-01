@@ -1,0 +1,43 @@
+public class GenericData<T> {
+    private T data;
+
+    public GenericData(T data) {
+        this.data = data;
+    }
+
+    // ডেটা সুয়াপ করার মেথড
+    public void argSwap(GenericData<T> other) {
+        try {
+            if (other == null || this.data == null || other.data == null) {
+                throw new NullPointerException("একটি অবজেক্ট বা ডেটা null আছে!");
+            }
+            
+            T temp = this.data;
+            this.data = other.data;
+            other.data = temp;
+            
+            System.out.println("সুয়াপ সফল!");
+            System.out.println("এই অবজেক্টে এখন: " + this.data);
+            System.out.println("অন্য অবজেক্টে এখন: " + other.data);
+            
+        } catch (NullPointerException e) {
+            System.out.println("ত্রুটি: " + e.getMessage());
+        }
+    }
+
+    public static void main(String[] args) {
+        // স্ট্রিং দিয়ে টেস্ট
+        GenericData<String> strData1 = new GenericData<>("হ্যালো");
+        GenericData<String> strData2 = new GenericData<>("বিশ্ব");
+        strData1.argSwap(strData2);
+        
+        // নাম্বার দিয়ে টেস্ট
+        GenericData<Integer> numData1 = new GenericData<>(100);
+        GenericData<Integer> numData2 = new GenericData<>(200);
+        numData1.argSwap(numData2);
+        
+        // Null দিয়ে টেস্ট (এক্সেপশন হবে)
+        GenericData<String> nullData = null;
+        strData1.argSwap(nullData);
+    }
+}
