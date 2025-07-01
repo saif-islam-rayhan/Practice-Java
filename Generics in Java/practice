@@ -1,0 +1,93 @@
+import java.util.*;
+
+//TIP To <b>Run</b> code, press <shortcut actionId="Run"/> or
+// click the <icon src="AllIcons.Actions.Execute"/> icon in the gutter.
+public class Main {
+
+
+    public static void main(String[] args) {
+        ArrayList<Integer>numbers=new ArrayList<>();
+        numbers.add(3);
+        numbers.add(2);
+        for(int i=0;i<8;i++){
+            numbers.add(i);
+        }
+      for(int i=0;i<numbers.size();i++){
+          System.out.print(numbers.get(i));
+      }
+//        Integer[] num=numbers.toArray((new Integer[0]));
+//        List<Integer>number= Arrays.asList(num);
+//        System.out.println(number);
+//    Scanner sc=new Scanner(System.in);
+//    int n=sc.nextInt();
+//    Integer[] arr= new Integer[n];
+//     for(int i=0;i<n;i++){
+//         arr[i]=sc.nextInt();
+//     }
+//     List<Integer>list= Arrays.asList(arr);
+//        System.out.println(list);
+//
+//        Integer[] arrays= list.toArray(new Integer[0]);
+//        System.out.println(arrays.length);
+////        Array to linked list
+//        LinkedList<Integer>larray=new LinkedList<>(Arrays.asList(arrays));
+//        System.out.println(larray);
+////        Array to set
+//        Set<Integer>set1=new TreeSet<>(Arrays.asList(arrays));
+//        System.out.println(set1);
+///String reverse order print
+//   Scanner sc= new Scanner(System.in);
+//   String s= sc.nextLine();
+//   for(int i=s.length()-1;i>=0;i--){
+//       System.out.print(s.charAt(i));
+//   }
+   //Map
+//        Scanner sc=new Scanner(System.in);
+//        int n= sc.nextInt();
+//        sc.nextLine();
+//       Map<String ,Integer>map=new HashMap<>();
+//       for(int i=0;i<n;i++){
+//           System.out.println("Enter your Name :");
+//           String name=sc.nextLine();
+//           sc.nextLine();
+//           System.out.println("Age: ");
+//           Integer age=sc.nextInt();
+//           sc.nextLine();
+//           map.put(name,age);
+//
+//       }
+//        System.out.println(map);
+
+        /// Word Freq count Using Map
+//        Map<String, Integer>fraq=new HashMap<>();
+//        Scanner sc=new Scanner(System.in);
+//        String Line=sc.nextLine();
+//        String[] arr=Line.split("\\W+");
+//        for(String w:arr){
+//            fraq.put(w,fraq.getOrDefault(w,0)+1);
+//        }
+//        System.out.println(fraq);
+        /// Character freq count
+//       Map<Character,Integer>fraq=new TreeMap<>();
+//        Scanner sc=new Scanner(System.in);
+//        String Word=sc.nextLine();
+//        for(char c: Word.toCharArray()){
+//            fraq.put(c,fraq.getOrDefault(c,0)+1);
+//        }
+//        System.out.println(fraq);
+        //Unique element
+
+//        Scanner sc=new Scanner(System.in);
+//        int n=sc.nextInt();
+//        Integer[] arr=new Integer[n];
+//        for(int i=0;i<n;i++){
+//            arr[i]= sc.nextInt();
+//        }
+//        Set<Integer>set=new TreeSet<>(Arrays.asList(arr));
+//        System.out.println(set);
+
+    }
+
+
+
+}
